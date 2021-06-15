@@ -1,5 +1,7 @@
 "use strict";
 
+const respDataArr = ["Status", "First Name", "Last Name", "Member Id", "Group No.", "Username", "Password"]
+
 const memberInput = document.getElementById("memberId")
 const envType = document.getElementById("env")
 const respDiv = document.getElementById("respContainer")
@@ -62,8 +64,8 @@ function addMember(memberId, envType) {
     .then(resp => resp.json())
     .then(data => {
       clearLoading()
-      Object.entries(data).forEach(([key, value]) =>
-        addRowToResp(`${key} : `, value)
+      respDataArr.forEach(key =>
+        addRowToResp(`${key} : `, data[key])
       )
     })
     .catch(error => {
