@@ -47,6 +47,10 @@ const addRowToResp = (key, value) => {
 function addMember(memberId, envType) {
   fetch('http://localhost:8080/api/v1/onboard', {
     method: 'post',
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": 'application/json'
+    },
     body: JSON.stringify({
       "subscriberId": memberId,
       "environmentType": envType
@@ -55,7 +59,6 @@ function addMember(memberId, envType) {
     .then(resp => resp.json())
     .then(data => {
       clearLoading()
-      console.log(data)
       Object.entries(data).forEach(([key, value]) =>
         addRowToResp(`${key} : `, value)
       )
