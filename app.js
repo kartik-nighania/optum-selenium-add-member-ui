@@ -51,10 +51,13 @@ function addMember(memberId, envType) {
       "Content-Type": "application/json",
       "Accept": 'application/json'
     },
-    body: JSON.stringify({
-      "subscriberId": memberId,
-      "environmentType": envType
-    })
+    body: JSON.stringify(
+      [
+        {
+          "subscriberId": memberId,
+          "environmentType": envType
+        }
+      ])
   })
     .then(resp => resp.json())
     .then(data => {
