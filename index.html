@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selemium automation</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <h2>Member Registration</h2>
+        <div class="content">
+          <div class="row">
+            <label for="memberId">Member ID</label>
+            <input type="text" name="memberId" id="memberId" />
+          </div>
+          <div class="row">
+            <label for="env">Environment</label>
+            <select name="env" id="env">
+              <option value="Test">TEST</option>
+              <option value="Stage">STAGE</option>
+            </select>
+          </div>
+          <input type="button" value="Submit" id="submit" />
+          <div id="respContainer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
